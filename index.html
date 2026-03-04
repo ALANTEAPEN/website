@@ -1,0 +1,335 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Professional Portfolio</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Inter", Arial, sans-serif;
+    }
+
+    body {
+      background: #f8fafc;
+      color: #0f172a;
+      line-height: 1.6;
+    }
+
+    /* HEADER */
+    header {
+      background: linear-gradient(120deg, #0f172a, #1e293b);
+      color: #f8fafc;
+      padding: 90px 20px 70px;
+      text-align: center;
+    }
+
+    .profile-pic {
+      width: 130px;
+      height: 130px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 4px solid #60a5fa;
+      margin-bottom: 20px;
+    }
+
+    header h1 {
+      font-size: 42px;
+      margin-bottom: 10px;
+    }
+
+    header p {
+      font-size: 18px;
+      color: #cbd5f5;
+    }
+
+    header .btn {
+      display: inline-block;
+      margin-top: 20px;
+      background: #2563eb;
+      color: white;
+      padding: 12px 28px;
+      border-radius: 30px;
+      text-decoration: none;
+      font-weight: 600;
+      margin-right: 10px;
+    }
+
+    header .btn-outline {
+      border: 2px solid #60a5fa;
+      color: #60a5fa;
+      background: transparent;
+    }
+
+    /* NAV */
+    nav {
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      background: #020617;
+      padding: 12px 0;
+      text-align: center;
+    }
+
+    nav a {
+      color: #e5e7eb;
+      margin: 0 14px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 14px;
+    }
+
+    nav a:hover {
+      color: #60a5fa;
+    }
+
+    /* LAYOUT */
+    .container {
+      width: 92%;
+      max-width: 1100px;
+      margin: 60px auto;
+    }
+
+    section {
+      margin-bottom: 80px;
+    }
+
+    section h2 {
+      font-size: 28px;
+      margin-bottom: 25px;
+      border-left: 6px solid #2563eb;
+      padding-left: 12px;
+      color: #020617;
+    }
+
+    /* ABOUT */
+    .about p {
+      font-size: 17px;
+      max-width: 800px;
+    }
+
+    /* SKILLS */
+    .skills-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(140px, 1fr));
+      gap: 16px;
+    }
+
+    .skill-box {
+      background: #ffffff;
+      padding: 15px;
+      border-radius: 12px;
+      text-align: center;
+      font-weight: 600;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+
+    /* TIMELINE */
+    .timeline {
+      background: #ffffff;
+      padding: 28px;
+      border-radius: 14px;
+      box-shadow: 0 6px 12px rgba(0,0,0,0.08);
+    }
+
+    .timeline-item {
+      margin-bottom: 22px;
+    }
+
+    .timeline-item h3 {
+      color: #2563eb;
+      font-size: 18px;
+    }
+
+    .timeline-item span {
+      font-size: 14px;
+      color: #475569;
+    }
+
+    /* PROJECTS */
+    .projects-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 25px;
+    }
+
+    .project-card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 22px;
+      box-shadow: 0 8px 16px rgba(0,0,0,0.08);
+      transition: transform 0.3s ease;
+    }
+
+    .project-card:hover {
+      transform: translateY(-6px);
+    }
+
+    .project-card h3 {
+      margin-bottom: 10px;
+      color: #1d4ed8;
+    }
+
+    .project-card a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #2563eb;
+      font-weight: 600;
+      text-decoration: none;
+      font-size: 14px;
+    }
+
+    /* CONTACT */
+    .contact-box {
+      background: #ffffff;
+      padding: 32px;
+      border-radius: 16px;
+      box-shadow: 0 8px 18px rgba(0,0,0,0.08);
+      max-width: 650px;
+    }
+
+    .contact-box p {
+      margin: 12px 0;
+      font-size: 16px;
+    }
+
+    .social-icons a {
+      font-size: 20px;
+      margin-right: 15px;
+      color: #2563eb;
+    }
+
+    /* FOOTER */
+    footer {
+      text-align: center;
+      padding: 28px 10px;
+      background: #020617;
+      color: #cbd5f5;
+      font-size: 14px;
+    }
+
+    @media (max-width: 600px) {
+      header h1 { font-size: 30px; }
+      header p { font-size: 16px; }
+      nav a { display: inline-block; margin: 8px 10px; }
+    }
+  </style>
+</head>
+
+<body>
+
+<header>
+  <img src="https://via.placeholder.com/150" class="profile-pic">
+  <h1>Alan T Eapen</h1>
+  <p>FullStack Developer</p>
+  <a href="file:///C:/Users/HP/OneDrive/Documents/website/Alan().pdf" class="btn btn-outline" download>Download CV</a>
+</header>
+
+<nav>
+  <a href="#about">About</a>
+  <a href="#skills">Skills</a>
+  <a href="#education">Education</a>
+  <a href="#projects">Projects</a>
+  <a href="#experience">Experience</a>
+  <a href="#contact">Contact</a>
+</nav>
+
+<div class="container">
+
+<section id="about" class="about">
+  <h2>About Me</h2>
+  <p>
+    Full Stack Developer with hands-on experience in building responsive web applications using modern technologies. Strong foundation in front-end, back-end, REST APIs, and databases, with a proactive mindset and eagerness to learn. Committed to contributing to team success by developing reliable, scalable solutions and continuously improving technical skills.
+  </p>
+</section>
+
+<section id="skills">
+  <h2>Professional Skills</h2>
+  <div class="skills-grid">
+    <div class="skill-box">MongoDB</div>
+    <div class="skill-box">Express.js</div>
+    <div class="skill-box">React.js</div>
+    <div class="skill-box">Node.js</div>
+    <div class="skill-box">Git & GitHub</div>
+    <div class="skill-box">Javascript</div>
+    <div class="skill-box">CSS</div>
+    <div class="skill-box">HTML</div>
+  </div>
+</section>
+
+<section id="education">
+  <h2>Education</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>Bachelor of Technology (Computer Science)</h3>
+      <span>2021 – 2025 | St. Thomas College of Engineering and Technology — APJ Abdul Kalam Technological University</span>
+    </div>
+  </div>
+</section>
+
+<section id="projects">
+  <h2>Key Projects</h2>
+  <div class="projects-grid">
+
+    <div class="project-card">
+      <h3>Modern Watch Website Project</h3>
+      <p>Web application to manage student records using Node.js and MongoDB.</p>
+      <a href="C:\Users\HP\Videos\Screen Recordings\Screen Recording 2025-09-13 184051.mp4" target="_blank">View Project →</a>
+    </div>
+
+    <div class="project-card">
+      <h3>Restaurant Website — Web Development Project</h3>
+      <p>This video demonstrates the design and functionality of a restaurant website, featuring responsive layouts, interactive sections</p>
+      <a href="C:\Users\HP\Videos\Screen Recordings\Screen Recording 2025-10-08 205804.mp4" target="_blank">View Project →</a>
+    </div>
+
+  </div>
+</section>
+
+<section id="experience">
+  <h2>Internship Experience</h2>
+  <div class="timeline">
+    <div class="timeline-item">
+      <h3>MERN Stack Development Intern</h3>
+      <span>2025 | Mashupstack (Kochi, India)</span>
+      <p>
+        • Developed full-stack web applications using MongoDB, Express.js, React.js, and Node.js<br>
+        • Built RESTful APIs<br>
+        • Worked on database design and CRUD operations<br>
+        • Contributed to deployment and testing
+      </p>
+    </div>
+  </div>
+</section>
+
+<section id="contact">
+  <h2>Contact Information</h2>
+  <div class="contact-box">
+    <p>Email:alanteapen2@gmail.com</p>
+    <p>Phone:+91 8590761916</p>
+    <div class="social-icons">
+      <a href="https://www.linkedin.com/in/alan-t-eapen-447935304" target="_blank">
+  <i class="fab fa-linkedin"></i></a>
+      <a href="https://github.com/ALANTEAPEN?tab=repositories"><i class="fab fa-github"></i></a>
+    </div>
+  </div>
+</section>
+
+</div>
+
+<footer>
+  <p>© 2025 Alan T Eapen</p>
+</footer>
+
+
+</body>
+</html>
